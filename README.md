@@ -9,19 +9,21 @@ Sandbox for exploring Playwright end‑to‑end testing in Node/JS. Demos includ
 
 3. **Explore advanced execution and configuration**. Including: Run tests in parallel, configure retries, and implement robust test isolation; Configure Playwright to run tests across Chromium, Firefox, and WebKit; Create a `.gitignore` file to exclude sensitive data, reports, and environment-specific `baseURL` values from version control; Set up a GitHub Action workflow to automatically execute the test suite on pushes and pull requests.
 
-4. **Use Playwright debugging tools**. Including: Practise using the Playwright Inspector; Capture and review traces with Trace Viewer for failed tests; Replay traces to identify root causes of failures.
+4. **Use Playwright debugging tools**. Including: TODO: Practise using the Playwright Inspector; Capture and review traces with Trace Viewer for failed tests; Replay traces to identify root causes of failures.
 
 5. **Study network interception and mobile emulation**. Including: Use `route.fulfill` to mock API responses; Explore mobile device emulation with device descriptors; Implement tests for file uploads and downloads.
 
-6. **Compare with other frameworks**. Including: Build small proof-of-concepts in Cypress and Selenium; Install each tool, create a basic login test, and compare syntax, setup, and execution speed; Document pros and cons for future reference.
+6. **Compare with other frameworks**. Including: TODO: Build small proof-of-concepts in Cypress and Selenium; Install each tool, create a basic login test, and compare syntax, setup, and execution speed; Document pros and cons for future reference.
 
-7. **Implement structured testing patterns**. Including: Apply the Page Object Model (POM) for maintainable and reusable test code; Use data-driven testing to supply scenarios from external files such as CSV or JSON; Enforce strong test isolation to prevent state leakage between tests.
+7. **Implement structured testing patterns**. Including: TODO: Apply the Page Object Model (POM) for maintainable and reusable test code; Use data-driven testing to supply scenarios from external files such as CSV (TODO) or JSON; Enforce strong test isolation to prevent state leakage between tests.
 
 8. **Design my automation script for personalised messages**. Including: Define the recipient data format in a JSON file; Write a Playwright script to iterate over recipients and perform the sending flow; Use resilient selectors and robust error handling; Keep sensitive data files out of version control via `.gitignore`.
 
-9. **Enhance the automation script**. Including: Add functionality to attach an image along with each message; Create a message template that uses JavaScript string interpolation to insert recipient-specific data such as name, a random salutation chosen from a predefined list, and a sign-off; Ensure each message is unique for better engagement.
+9. **Enhance the automation script**. Including: TODO: Add functionality to attach an image along with each message; Create a message template that uses JavaScript string interpolation to insert recipient-specific data such as name, TODO: a random salutation chosen from a predefined list, and a sign-off; Ensure each message is unique for better engagement.
 
 10. **Implement logging and reporting**. Including: Log the success or failure of each send attempt to a file for later review and troubleshooting; Exclude logs from version control via `.gitignore`.
+
+11. Repo clean-up: TODO: Compose usage README.
 
 ## Key concepts to master 
  * Locators and selectors – roles, CSS selectors, XPath and test IDs; strategies to maintain resilience.
@@ -33,3 +35,7 @@ Sandbox for exploring Playwright end‑to‑end testing in Node/JS. Demos includ
  * Network mocking & API testing – intercept requests to control responses and simulate network conditions.
  * Record & playback tools – Playwright codegen, Cypress Studio and Selenium IDE.
  * CI/CD & reporting – integrating tests into pipelines and generating reports.
+
+
+ # Parking lot
+ * Re-attempt single QR login that persists across tests that run later.
