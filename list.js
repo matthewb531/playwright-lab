@@ -1,10 +1,10 @@
 export const contacts = [
-  { name: "hi me", message: "2"},
-  { name: "hi me2", message: "3"},
+  { name: "Aaron Aybeta", message: "2"},
+  { name: "Bill Bates", message: "3"},
 ];
 
-export const message = (name = '', message = '') =>
-  `Hey there, ${name}!😍
+export const message = (greeting = '', name = '', message = '') =>
+  `${greeting}, ${name}!😍
 
  You're welcome to the party, you're number ${message}!
  Woot! Woot!!!`;
