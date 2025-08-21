@@ -1,9 +1,22 @@
-export const list = [
-  { name: "Ahmet", message: "2"},
-  { name: "Bob", message: "3"},
-  { name: "Caitlin", message: "4"},
-  { name: "David", message: "5"}
+export const contacts = [
+  { name: "hi me", message: "2"},
+  { name: "hi me2", message: "3"},
 ];
 
-export const body = (name = '', message = '') =>
-  `Hey there, ${name}! Welcome to the party, you're number ${message}!`;
+export const message = (name = '', message = '') =>
+  `Hey there, ${name}!😍
+
+ You're welcome to the party, you're number ${message}!
+ Woot! Woot!!!`;
+
+ export const greetings = [
+  "Howzit",
+  "Howdy",
+  "Hello",
+  "Hi",
+  "Greetings",
+  "Salutations",
+  "What's up",
+  "Hiya",
+  "Hey",
+];
