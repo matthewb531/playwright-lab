@@ -19,7 +19,7 @@ Sandbox for exploring Playwright end‑to‑end testing in Node/JS. Demos includ
 
 8. **Design my automation script for personalised messages**. Including: Define the recipient data format in a JSON file; Write a Playwright script to iterate over recipients and perform the sending flow; Use resilient selectors and robust error handling; Keep sensitive data files out of version control via `.gitignore`.
 
-9. **Enhance the automation script**. Including: TODO: Add functionality to attach an image along with each message; Create a message template that uses JavaScript string interpolation to insert recipient-specific data such as name, TODO: a random salutation chosen from a predefined list, and a sign-off; Ensure each message is unique for better engagement.
+9. **Enhance the automation script**. Including: Add functionality to attach an image along with each message; Create a message template that uses JavaScript string interpolation to insert recipient-specific data such as name, a random salutation chosen from a predefined list, and a sign-off; Ensure each message is unique for better engagement.
 
 10. **Implement logging and reporting**. Including: Log the success or failure of each send attempt to a file for later review and troubleshooting; Exclude logs from version control via `.gitignore`.
 
@@ -36,6 +36,15 @@ Sandbox for exploring Playwright end‑to‑end testing in Node/JS. Demos includ
  * Record & playback tools – Playwright codegen, Cypress Studio and Selenium IDE.
  * CI/CD & reporting – integrating tests into pipelines and generating reports.
 
+ # Ideas parking lot
+ * TODO/Idea: Write a tool to save names from a specific "List" (in Cypress or Puppeteer). 
+ * Use AI to identify a usable first name to include in the messages sent (as opposed to using the saved name in the contact list).
 
- # Parking lot
- * Re-attempt single QR login that persists across tests that run later.
+## Bonus points:
+* Auth: refactor to custom fixtures that use a persistent profile
+* get auth.js to reset auth everytime it runs
+
+## Done: 
+* Send emojis and line spacings.
+* Fix/remove the github action/pipeline.
+* Use first name of contact in message sent.
