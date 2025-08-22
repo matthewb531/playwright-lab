@@ -37,8 +37,9 @@ Sandbox for exploring Playwright end‑to‑end testing in Node/JS. Demos includ
  * CI/CD & reporting – integrating tests into pipelines and generating reports.
 
  # Ideas parking lot
- * TODO/Idea: Write a tool to save names from a specific "List" (in Cypress or Puppeteer). 
+ * TODO/Idea: Write a tool to save names from a specific "List" (in Cypress or Puppeteer). **remove middle names
  * Use AI to identify a usable first name to include in the messages sent (as opposed to using the saved name in the contact list).
+ * Test single names.
 
 ## Bonus points:
 * Auth: refactor to custom fixtures that use a persistent profile

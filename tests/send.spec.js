@@ -1,6 +1,7 @@
 // @ts-check
 import { test, expect, chromium } from '@playwright/test';
-import { greetings, contacts, message } from '../list.js';
+import { contacts } from '../contacts.js';
+import { randomGreeting, firstName, buildCaption } from '../utils.js';
 import 'dotenv/config';
 import path from 'path';
 
@@ -22,13 +23,18 @@ test('Send messages', async () => {
     await page.getByRole('button', { name: 'Attach' }).click();
     const fileInput = page.getByRole('button', { name: 'Photos & videos' }).locator('input[type="file"]');
     if (fileInput) {
-      const filePath = path.join(__dirname, './image.jpg');
+      const filePath = path.join(__dirname, '../fixtures/image.jpg');
       await fileInput.setInputFiles(filePath);
     } else {
       console.error('File input element not found');
     }
     // Add caption to image:
-    await page.getByRole('textbox', { name: 'Add a caption' }).fill(message(greetings[Math.floor(Math.random() * greetings.length)],(contacts[i].name).trim().split(/\s+/)[0], contacts[i].message));
+    const caption = buildCaption(
+          randomGreeting(),
+          firstName(contacts[i].name),
+          contacts[i].token,
+        );
+    await page.getByRole('textbox', { name: 'Add a caption' }).fill(caption);
     await page.getByRole('button', { name: 'Send' }).click();
     await page.getByLabel('Pending').waitFor({ state: 'hidden' });
   }
