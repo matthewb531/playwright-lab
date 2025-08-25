@@ -10,7 +10,7 @@ const USER_DATA_DIR = '.auth/.wa-profile';
   try {
     const page = await ctx.newPage();
     const Chatpage = new ChatPage(page);
-    await Chatpage.goto();
+    await Chatpage.gotoHomePage();
     const loggedIn = !!await Chatpage.qrCode.isVisible({ timeout: 10000 });
     if (loggedIn) {
       console.log("Already logged in.");

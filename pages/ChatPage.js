@@ -17,7 +17,7 @@ export class ChatPage {
     this.pendingLabel = page.getByLabel('Pending').first();
   }
 
-  async goto() {
+  async gotoHomePage() {
     await this.page.goto(process.env.BASE_URL);
     await this.page.waitForLoadState('domcontentloaded');
   }
@@ -48,5 +48,9 @@ export class ChatPage {
 
   async waitUntilSendComplete () {
     await this.pendingLabel.waitFor({ state: 'hidden' });
+  }
+
+  async gentlePacing() {
+    await this.page.waitForTimeout(500 + Math.floor(Math.random() * 800));
   }
 }

@@ -11,23 +11,28 @@ test('Send image with caption to contact list', async () => {
   const ctx = await chromium.launchPersistentContext(USER_DATA_DIR, {
     headless: false
   });
-
   const page = await ctx.newPage();
   const Chatpage = new ChatPage(page);
-  await Chatpage.goto();
+
+  await test.step('Open app and verify ready', async () => {
+    await Chatpage.gotoHomePage();
+  });
   // Loop and send:
-  for (let i = 0; i < contacts.length; i++) {
-    await Chatpage.searchAndOpenContact(contacts[i].name);
-    await Chatpage.imageUpload();
+  for (const c of contacts) {
+    await test.step(`Send to: ${c.name}`, async () => {
+      await Chatpage.searchAndOpenContact(c.name);
+      await Chatpage.imageUpload();
 
-    const caption = buildCaption(
-      randomGreeting(),
-      firstName(contacts[i].name),
-      contacts[i].token,
-    );
+      const caption = buildCaption(
+        randomGreeting(),
+        firstName(c.name),
+        c.token,
+      );
 
-    await Chatpage.sendImageWithCaption(caption);
-    await Chatpage.waitUntilSendComplete();
+      await Chatpage.sendImageWithCaption(caption);
+      await Chatpage.waitUntilSendComplete();
+      await Chatpage.gentlePacing();
+    });
   }
   await ctx.close();
 });
