@@ -40,6 +40,7 @@ Sandbox for exploring Playwright end‑to‑end testing in Node/JS. Demos includ
  * TODO/Idea: Write a tool to save names from a specific "List" (in Cypress or Puppeteer). **remove middle names
  * Use AI to identify a usable first name to include in the messages sent (as opposed to using the saved name in the contact list).
  * Test single names.
+ * Gentle pacing/jitter to avoid throttling.
 
 ## Bonus points:
 * Auth: refactor to custom fixtures that use a persistent profile
@@ -49,3 +50,7 @@ Sandbox for exploring Playwright end‑to‑end testing in Node/JS. Demos includ
 * Send emojis and line spacings.
 * Fix/remove the github action/pipeline.
 * Use first name of contact in message sent.
+
+# Refactor
+* explore typescript
+* utils functions: first name only, greeting randomizer, pull out persist session into page, 

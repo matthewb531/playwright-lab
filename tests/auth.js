@@ -9,7 +9,7 @@ const USER_DATA_DIR = '.auth/.wa-profile';
   try {
     const page = await ctx.newPage();
     await page.goto('https://web.whatsapp.com');
-    const loggedIn = !!await page.getByRole('button', { name: 'Chats' }).isVisible();
+    const loggedIn = !!await page.getByRole('button', { name: 'Chats' }).isVisible().waitFor({ timeout: 60000 });
     if (loggedIn) {
       console.log("Already logged in.");
     } else {

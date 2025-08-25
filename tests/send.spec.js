@@ -1,22 +1,23 @@
 // @ts-check
 import { test, expect, chromium } from '@playwright/test';
-import { contacts } from '../contacts.js';
-import { randomGreeting, firstName, buildCaption } from '../utils.js';
+import { contacts } from '../data/contacts.js';
+import { randomGreeting, firstName, buildCaption } from '../utils/caption.js';
 import 'dotenv/config';
 import path from 'path';
 
 // QR auth and persist context
 const USER_DATA_DIR = '.auth/.wa-profile';
 
-test('Send messages', async () => {
+test('Send image with caption to contact list', async () => {
   const ctx = await chromium.launchPersistentContext(USER_DATA_DIR, {
     headless: false
   });
   const page = await ctx.newPage();
   await page.goto('/');
-  await expect(page.getByRole('button', { name: 'Chats' })).toBeVisible();
+  await page.getByRole('button', { name: 'Chats' }).waitFor({ timeout: 60000 });
   // Loop and send:
   for (let i = 0; i < contacts.length; i++) {
+    await page.getByRole('textbox', { name: 'Search input textbox' }).fill('');
     await page.getByRole('textbox', { name: 'Search input textbox' }).fill(contacts[i].name);
     await page.getByTitle(contacts[i].name, { exact: true }).first().click();
     // Image upload:

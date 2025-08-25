@@ -6,7 +6,7 @@ Enjoy!`};
 
 export function firstName(fullName) {
   return fullName.trim().split(/\s+/)[0];
-}
+};
 
  export function randomGreeting() {
   const greetings = [
@@ -18,4 +18,5 @@ export function firstName(fullName) {
     "Heeey",
   ];
   return greetings[Math.floor(Math.random() * greetings.length)];
- }
+ };
+ 
