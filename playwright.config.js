@@ -6,8 +6,8 @@ import { defineConfig, devices } from '@playwright/test';
  * https://github.com/motdotla/dotenv
  */
 import dotenv from 'dotenv';
-import path from 'path';
-dotenv.config({ path: path.resolve(__dirname, '.env') });
+import { fileURLToPath } from 'url';
+dotenv.config({ path: fileURLToPath(new URL('.env', import.meta.url)) });
 
 /**
  * @see https://playwright.dev/docs/test-configuration

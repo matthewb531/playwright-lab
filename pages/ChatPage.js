@@ -1,6 +1,6 @@
 import { expect } from '@playwright/test';
 import 'dotenv/config';
-import path from 'path';
+import { fileURLToPath } from 'url';
 export class ChatPage {
   constructor(page) {
     this.page = page;
@@ -34,7 +34,7 @@ export class ChatPage {
     await this.attachBtn.click();
     const fileInput = this.fileInput;
     if (fileInput) {
-      const filePath = path.join(__dirname, '../fixtures/image.jpg');
+      const filePath = fileURLToPath(new URL('../fixtures/image.jpg', import.meta.url));
       await fileInput.setInputFiles(filePath);
     } else {
       console.error('File input element not found');
