@@ -1,0 +1,6 @@
+// @ts-check
+export const contacts = [
+  { name: "Contact 1", token: "Alpha"},
+  { name: "Contact 2", token: "Bravo"},
+  { name: "Contact 3", token: "Charlie"},
+];

@@ -30,6 +30,7 @@ test('Send image with caption to contact list', async () => {
       );
 
       await Chatpage.sendImageWithCaption(caption);
+      
       await Chatpage.waitUntilSendComplete();
       await Chatpage.gentlePacing();
     });

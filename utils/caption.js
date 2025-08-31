@@ -1,7 +1,7 @@
 // @ts-check
 export function buildCaption(greeting = '', name = '', token = '') {
-  return `${greeting}, ${name}! 😍
-You're welcome to the event, your token number is ${token}!
+  return `${greeting}, ${name}! 
+You're welcome to the event, your token number is ${token}! 🎟️
 Enjoy!`};
 
 export function firstName(fullName) {
@@ -10,12 +10,12 @@ export function firstName(fullName) {
 
  export function randomGreeting() {
   const greetings = [
-    "Howziiit",
-    "Howdyyy",
-    "Hellooo",
-    "Hiii",
-    "Yooo",
-    "Heeey",
+    "Howzit",
+    "Howdy",
+    "Hello",
+    "Hi",
+    "Yo",
+    "Hey",
   ];
   return greetings[Math.floor(Math.random() * greetings.length)];
  };
