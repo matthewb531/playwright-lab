@@ -1,5 +1,6 @@
 # protect sensitive auth
 .auth
+./data/contacts.js
 
 # Logs
 logs
